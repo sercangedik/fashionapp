@@ -1,10 +1,10 @@
 Fashion::Application.routes.draw do
   
   root :to => "pages#home"
-  match '/contact', :to => 'pages#contact'
-  match 'about', :to => 'pages#about'
-    
-  get "pages/home"
+  
+  get '/contact', :to => "pages#contact"
+  get '/about', :to => "pages#about"
+
 
   resources :microposts
 
