@@ -21,6 +21,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+
+gem 'protected_attributes'
+
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -32,9 +36,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
-  gem 'annotate-models', '1.0.4'
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
