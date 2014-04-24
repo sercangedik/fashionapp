@@ -20,22 +20,18 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   
   def has_password?(submitted_password)
-  encrypted_password = encrypt(submitted_password)
-  
+    encrypted_password = encrypt(submitted_password)
   end
   
   class << self
     def authenticate(email, submitted_password)
       user = find_by_email(email)
-      (user && yser.has_password?(submitted_password)) ? user : nil
+      (user && user.has_password?(submitted_password)) ? user : nil
     end
-
-    end 
     
     def authenticate_with_salt(id, cookie_salt)
       user = find_by_id(id)
       (user && user.salt == cookie_salt) ? user : nil
-      
     end
   end
   
@@ -59,5 +55,3 @@ class User < ActiveRecord::Base
       secure_hash("#{Time.now.utc}--#{password}")
     end
 end
-
-  
