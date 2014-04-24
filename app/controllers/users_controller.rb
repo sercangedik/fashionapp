@@ -19,8 +19,4 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
- # private
-  #  def app_params
-   #   params.require(:list).permit(:name, :email)
-  #  end
 end
