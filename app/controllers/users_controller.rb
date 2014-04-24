@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @title = "Sign Up"
   end
   
+  
+  def show
+    @user = User.find(params[:id])
+  end
  # private
   #  def app_params
    #   params.require(:list).permit(:name, :email)

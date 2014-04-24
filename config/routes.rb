@@ -1,6 +1,9 @@
 Fashion::Application.routes.draw do
   
-  get "users/new"
+  resources :users
+  
+    #get "users/new"
+  
   root :to => "pages#home"
   
   get '/contact', :to => "pages#contact"
