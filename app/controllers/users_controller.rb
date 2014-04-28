@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:edit, :update]
-  
+  before_filter :correct_user, :only => [:edit, :update]
   
   
   def show
@@ -50,8 +50,5 @@ class UsersController < ApplicationController
     redirect_to(root_path) unless current_user?(@user)
   end
   
-  
-  def deny_access
-    redirect_to signin_path, :notice => "Please sign in to access this page ! "
-  end
+
 end
