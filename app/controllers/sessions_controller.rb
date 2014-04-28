@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
    else
      # success handling !
      sign_in user
-     redirect_to user
+     redirect_back_or user
    end
   end
   
