@@ -22,6 +22,15 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 
+#sayfa numaralandirmasi icin gerekli
+gem 'will_paginate', '3.0.pre'
+
+group :development do
+  #sahte database olusturan program
+  gem 'faker','0.3.1'
+end
+
+
 #avatar icin file
 gem 'gravatar_image_tag', '0.1.0'
 
