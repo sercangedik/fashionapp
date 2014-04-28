@@ -23,7 +23,7 @@ gem 'jquery-rails'
 
 
 #sayfa numaralandirmasi icin gerekli
-gem 'will_paginate', '3.0.pre'
+gem 'will_paginate', '~> 3.0.5'
 
 group :development do
   #sahte database olusturan program
