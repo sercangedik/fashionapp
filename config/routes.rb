@@ -10,6 +10,10 @@ Fashion::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
+  resources :search
+  resources :microposts do
+    resources :comments
+  end
     #get "users/new"
   
   root :to => "pages#home"
@@ -19,7 +23,7 @@ Fashion::Application.routes.draw do
   get '/signup', :to => "users#new"
   get '/signin', :to => "sessions#new"
   get '/signout', :to => "sessions#destroy"
-
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

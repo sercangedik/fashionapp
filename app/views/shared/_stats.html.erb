@@ -17,6 +17,17 @@
 			 	 	</strong>
 		 	 	</a>
 	  	   </td>
+		   
+	    
   	  </tr>
+	  <tr>
 	</table>
+   
+    
+
+   
+   <%= form_tag('/search', method: "get") do %>
+      <%= select(nil,"id",{ "Aksesuar" => "Aksesuar", "Ayakkabı" => "Ayakkabı", "Pantolon" => "Pantolon", "Üst Giyim" => "Üst Giyim", "Ceket" => "Ceket", "Mont" => "Mont"}) %>
+      <%= submit_tag "Search", :name => nil %>
+      <% end %>
 </div>

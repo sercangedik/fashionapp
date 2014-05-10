@@ -1,10 +1,35 @@
-<%= form_for(@micropost) do |f| %>
+<%= form_for(@micropost , :html => { :multipart => true}) do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 	<div class="field">
 		<%= f.text_area :content %>
+		
+	   <%= f.label :category %>
+	       <%= f.select :category, microposts_helper_categories %>
+		   
+		
+   		<div class="field">
+   			<%= f.label :image %><br />
+   			<%= f.file_field :image %>
+   		</div>
 	</div>
-	
 	<div class = "actions">
 		<%= f.submit "Submit" %>
 	</div>	
+	
+	<h1>Add a comment</h1>
+	<%#= form_for([@micropost, @micropost.comments.build] do |f| )%>
+	<div class = "field" >
+		<%= f.label :commenter %><br />
+		<%= f.text_field :commenter %>
+	</div>
+	
+	<div class = "field" >
+		<%= f.label :body%><br />
+		<%= f.text_area :body%>
+	</div>
+	<div class ="actions">
+		<%= f.submit %>
+	</div>
+	<%# end %>
+	
 <% end %>

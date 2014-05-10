@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     @title = @user.name
   end
   
+  def search
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(:page => params[:page])
+    @title = @user.name
+  end
+  
   def following
     @title = "Following"
     @user = User.find(params[:id])

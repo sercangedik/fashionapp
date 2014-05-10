@@ -1,0 +1,16 @@
+<%  @posts.each do |post| %>
+<table class="profile" summary="Profile Information">
+	<tr>
+		<td class="main">
+			<h1>
+				<%= gravatar_for post.user %>
+				<%= post.user.name %>
+			</h1>
+			<table class="microposts" summary="User microposts">
+				<%= post.content %>
+			</table>
+			
+		</td>
+	</tr>
+</table>
+<% end %>
